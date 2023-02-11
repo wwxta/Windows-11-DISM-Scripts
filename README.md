@@ -13,6 +13,7 @@ Image optimization by removing pre-installed junk packages, disabling update tas
 - The image must be mounted.
 - You need any disk (if RAM, then you need support for NTFS DISM commands, SoftPerfect RAM Disk and analogues), with the letter Z, larger than 12500MB.
 - Unpack the scripts, install.wim and boot.wim files (from the source folder of the .iso file) to the root of the disk.
+- Download StartAllBack\Start11 and place it in Z:\PostClear under the name CustomStart.exe (by default, scripts are designed for repack for silent installation with the /S switch).
 - If the system language differs from Russian, replace “ru-RU” in _Clear.bat, in the OneDrive block, with your version.
 - Run _Clear.bat and wait for the window to close.
 - Make sure there are no errors in the Clear.log file by searching: “operation”, “errors”, “not”, “no”.
@@ -24,6 +25,7 @@ Image optimization by removing pre-installed junk packages, disabling update tas
 - 必須安裝映像。
 - 您需要任何磁盤（如果是 RAM，則需要支持 NTFS DISM 命令、SoftPerfect RAM 磁盤和類似物），字母 Z 大於 12500MB。
 - 將腳本、install.wim 和 boot.wim 文件（從 .iso 文件的源文件夾）解壓到磁盤的根目錄。
+- 下載 StartAllBack\Start11 並將其放在 Z:\PostClear 中，名稱為 CustomStart.exe（默認情況下，腳本設計用於重新打包以使用 /S 開關進行靜默安裝）。
 - 如果系統語言不同於俄語，請將 OneDrive 塊中 _Clear.bat 中的“ru-RU”替換為您的版本。
 - 運行 _Clear.bat 並等待窗口關閉。
 - 通過搜索“operation”、“errors”、“not”、“no”確保 Clear.log 文件中沒有錯誤。
@@ -35,6 +37,7 @@ Image optimization by removing pre-installed junk packages, disabling update tas
 - Образ должен быть смонтирован.
 - Понадобиться любой диск (если RAM, то нужна поддержка NTFS DISM команд, SoftPerfect RAM Disk и аналоги), с буквой Z, размером более 12500МБ.
 - Распаковать скрипты, файлы install.wim и boot.wim (из папки source файла .iso) в корень диска.
+- Скачать StartAllBack\Start11 и поместить его в Z:\PostClear под именем CustomStart.exe (по умолчанию скрипты рассчитаны на репак для тихой установки с ключом /S).
 - В случае отличия языка системы от русского, заменить в _Clear.bat «ru-RU», в блоке OneDrive, на свою версию.
 - Запустить _Clear.bat и ожидать завершение работы окна.
 - Убедится в отсутствии ошибок в файле Clear.log по поиску: «операция», «оши», «не », «нет».
