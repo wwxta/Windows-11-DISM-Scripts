@@ -24,11 +24,28 @@ Windows Registry Editor Version 5.00
 ; Центр обеспечения безопасности
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\wscsvc]
 "Start"=dword:00000004
+; Функциональные возможности для подключенных пользователей и телеметрия
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\DiagTrack]
+"Start"=dword:00000004
+; Perfmon
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\DefenderApiLogger]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\DefenderAuditLogger]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\Diagtrack-Listener]
+"FileMax"=dword:00000002
+"FileCounter"=dword:00000001
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\NetCore]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\RadioMgr]
+"Start"=dword:00000000
 ; Windows Update Agent
 [HKEY_CLASSES_ROOT\AppID\{653C5148-4DCE-4905-9CFD-1B23662D3D9E}]
-"LocalService"=-
-; Shell
-[-HKEY_CLASSES_ROOT\CLSID\{09A47860-11B0-4DA5-AFA5-26D86198A780}\InprocServer32]
+"LocalService"="wuauserv.Disable"
+; Defender shell
+[HKEY_CLASSES_ROOT\CLSID\{09A47860-11B0-4DA5-AFA5-26D86198A780}\InprocServer32]
+@="C:\\Program Files\\Windows Defender\\shellext.dll.Disable"
 ; SmartScreen
 [-HKEY_CLASSES_ROOT\CLSID\{a463fcb9-6b1c-4e0d-a80b-a2ca7999e25d}\InProcServer32]
 [-HKEY_CLASSES_ROOT\CLSID\{a463fcb9-6b1c-4e0d-a80b-a2ca7999e25d}\LocalServer32]
@@ -36,16 +53,18 @@ Windows Registry Editor Version 5.00
 [-HKEY_CLASSES_ROOT\WOW6432Node\CLSID\{a463fcb9-6b1c-4e0d-a80b-a2ca7999e25d}\LocalServer32]
 [-HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Classes\CLSID\{a463fcb9-6b1c-4e0d-a80b-a2ca7999e25d}\InProcServer32]
 [-HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Classes\CLSID\{a463fcb9-6b1c-4e0d-a80b-a2ca7999e25d}\LocalServer32]
-; Perfmon
-[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\DefenderApiLogger]
-"Start"=dword:00000000
-[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\DefenderAuditLogger]
-"Start"=dword:00000000
-[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\NetCore]
-"Start"=dword:00000000
-[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\RadioMgr]
-"Start"=dword:00000000
-; Hide window title when unselected
+; Mobsync
+[HKEY_CLASSES_ROOT\CLSID\{1A1F4206-0688-4E7F-BE03-D82EC69DF9A5}\LocalServer32]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+  00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,6d,00,6f,00,\
+  62,00,73,00,79,00,6e,00,63,00,2e,00,65,00,78,00,65,00,2e,00,44,00,69,00,73,\
+  00,61,00,62,00,6c,00,65,00,00,00
+[HKEY_CLASSES_ROOT\WOW6432Node\CLSID\{1A1F4206-0688-4E7F-BE03-D82EC69DF9A5}\LocalServer32]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+  00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,6d,00,6f,00,\
+  62,00,73,00,79,00,6e,00,63,00,2e,00,65,00,78,00,65,00,2e,00,44,00,69,00,73,\
+  00,61,00,62,00,6c,00,65,00,00,00
+; Disable folder types window title
 [-HKEY_CLASSES_ROOT\Drive\tabsets]
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderTypes\{0b0ba2e3-405f-415e-a6ee-cad625207853}]
 "PerceivedType"=-

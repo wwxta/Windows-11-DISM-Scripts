@@ -28,8 +28,14 @@ Windows Registry Editor Version 5.00
 ; Координатор распределенных транзакций
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\MSDTC]
 "Start"=dword:00000004
+; Настройка сервера удаленных рабочих столов
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\SessionEnv]
+"Start"=dword:00000004
 ; Оптимизация доставки
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\DoSvc]
+"Start"=dword:00000004
+; Перенаправитель портов пользовательского режима служб удаленных рабочих столов
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\UmRdpService]
 "Start"=dword:00000004
 ; Сетевая служба Xbox Live
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\XboxNetApiSvc]
@@ -76,6 +82,9 @@ Windows Registry Editor Version 5.00
 ; Служба хранилища
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\StorSvc]
 "Start"=dword:00000004
+; Службы удаленных рабочих столов
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\TermService]
+"Start"=dword:00000004
 ; Сохранение игр на Xbox Live
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\XblGameSave]
 "Start"=dword:00000004
@@ -87,9 +96,6 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000004
 ; Фоновая интеллектуальная служба передачи
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\BITS]
-"Start"=dword:00000004
-; Функциональные возможности для подключенных пользователей и телеметрия
-[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\DiagTrack]
 "Start"=dword:00000004
 ; Центр обновления Windows
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\wuauserv]
@@ -105,14 +111,6 @@ Windows Registry Editor Version 5.00
 "MaxSize"=dword:00100000
 "MaxSizeUpper"=dword:00000000
 "Retention"=dword:ffffffff
-[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\EventLog\Security]
-"MaxSize"=dword:013f0000
-"MaxSizeUpper"=dword:00000000
-"Retention"=dword:ffffffff
-[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\EventLog\System]
-"MaxSize"=dword:00100000
-"MaxSizeUpper"=dword:00000000
-"Retention"=dword:ffffffff
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\EventLog\HardwareEvents]
 "MaxSize"=dword:00100000
 "MaxSizeUpper"=dword:00000000
@@ -122,6 +120,22 @@ Windows Registry Editor Version 5.00
 "MaxSizeUpper"=dword:00000000
 "Retention"=dword:ffffffff
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\EventLog\Key Management Service]
+"MaxSize"=dword:00100000
+"MaxSizeUpper"=dword:00000000
+"Retention"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\EventLog\Parameters]
+"MaxSize"=dword:00100000
+"MaxSizeUpper"=dword:00000000
+"Retention"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\EventLog\Security]
+"MaxSize"=dword:013f0000
+"MaxSizeUpper"=dword:00000000
+"Retention"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\EventLog\State]
+"MaxSize"=dword:00100000
+"MaxSizeUpper"=dword:00000000
+"Retention"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\EventLog\System]
 "MaxSize"=dword:00100000
 "MaxSizeUpper"=dword:00000000
 "Retention"=dword:ffffffff

@@ -111,7 +111,7 @@ schtasks /change /tn "Microsoft\Windows\WindowsUpdate\Scheduled Start" /disable
 %programdata%\PostClear\AdvancedRun.exe /EXEFilename %windir%\System32\schtasks.exe /CommandLine '/delete /tn "Microsoft\Windows\UpdateOrchestrator\UUS Failover Task" /f' /RunAs 4 /WaitProcess 1 /Run
 TIMEOUT /T 1 /NOBREAK >nul
 title Applying GroupPolicy
-%programdata%\PostClear\LGPO.exe /m %programdata%\PostClear\GPm.pol
+%programdata%\PostClear\LGPO.exe /m %programdata%\PostClear\GPM.pol
 TIMEOUT /T 1 /NOBREAK >nul
 title Updating GroupPolicy
 gpupdate /force

@@ -101,7 +101,6 @@ title OneDrive
 takeown /f Z:\Install\Windows\WinSxS\amd64_microsoft-windows-onedrive-setup_31bf3856ad364e35_10.0.22621.1_none_86d60ce019ce7baf
 icacls Z:\Install\Windows\WinSxS\amd64_microsoft-windows-onedrive-setup_31bf3856ad364e35_10.0.22621.1_none_86d60ce019ce7baf /grant "%username%":f /c /l /q
 rd /s /q Z:\Install\Windows\WinSxS\amd64_microsoft-windows-onedrive-setup_31bf3856ad364e35_10.0.22621.1_none_86d60ce019ce7baf
-
 set DELETELIST=Z:\Install\Windows\System32\OneDriveSetup.exe Z:\Install\Windows\WinSxS\Manifests\amd64_microsoft-windows-onedrive-setup_31bf3856ad364e35_10.0.22621.1_none_86d60ce019ce7baf.manifest Z:\Install\Windows\WinSxS\SettingsManifests\amd64_microsoft-windows-onedrive-setup_31bf3856ad364e35_10.0.22621.1_none_86d60ce019ce7baf.manifest Z:\Install\Windows\WinSxS\Manifests\amd64_microsoft-windows-onedrive-setupregistry_31bf3856ad364e35_10.0.22621.1_none_51812954380458e2.manifest Z:\Install\Windows\WinSxS\Manifests\wow64_microsoft-windows-onedrive-setupregistry_31bf3856ad364e35_10.0.22621.1_none_5bd5d3a66c651add.manifest Z:\Install\Windows\servicing\Packages\Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~~10.0.22621.1.cat Z:\Install\Windows\servicing\Packages\Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~~10.0.22621.1.mum Z:\Install\Windows\servicing\Packages\Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~ru-RU~10.0.22621.1.cat Z:\Install\Windows\servicing\Packages\Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~ru-RU~10.0.22621.1.mum Z:\Install\Windows\servicing\Packages\Microsoft-Windows-OneDrive-Setup-WOW64-Package~31bf3856ad364e35~amd64~~10.0.22621.1.cat Z:\Install\Windows\servicing\Packages\Microsoft-Windows-OneDrive-Setup-WOW64-Package~31bf3856ad364e35~amd64~~10.0.22621.1.mum Z:\Install\Windows\servicing\Packages\Microsoft-Windows-OneDrive-Setup-WOW64-Package~31bf3856ad364e35~amd64~ru-RU~10.0.22621.1.cat Z:\Install\Windows\servicing\Packages\Microsoft-Windows-OneDrive-Setup-WOW64-Package~31bf3856ad364e35~amd64~ru-RU~10.0.22621.1.mum Z:\Install\Windows\System32\CatRoot\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}\Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~~10.0.22621.1.cat Z:\Install\Windows\System32\CatRoot\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}\Microsoft-Windows-OneDrive-Setup-Package~31bf3856ad364e35~amd64~ru-RU~10.0.22621.1.cat Z:\Install\Windows\System32\CatRoot\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}\Microsoft-Windows-OneDrive-Setup-WOW64-Package~31bf3856ad364e35~amd64~~10.0.22621.1.cat Z:\Install\Windows\System32\CatRoot\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}\Microsoft-Windows-OneDrive-Setup-WOW64-Package~31bf3856ad364e35~amd64~ru-RU~10.0.22621.1.cat
 for %%a in (%DELETELIST%) do (
 	takeown /f %%a
@@ -124,12 +123,22 @@ takeown /f %DEL%
 icacls %DEL% /grant "%username%":f /c /l /q
 del /f /q %DEL%
 title Calc
-set DEL=Z:\Install\Windows\System32\calc.exe
-takeown /f %DEL%
-icacls %DEL% /grant "%username%":f /c /l /q
-del /f /q %DEL%
+set DELETELIST=Z:\Install\Windows\WinSxS\amd64_microsoft-windows-calc_31bf3856ad364e35_10.0.22621.1_none_0b53ccef0e7a283c Z:\Install\Windows\WinSxS\wow64_microsoft-windows-calc_31bf3856ad364e35_10.0.22621.1_none_15a8774142daea37
+for %%a in (%DELETELIST%) do (
+	takeown /f %%a
+	icacls %%a /grant "%username%":f /c /l /q
+	rd /s /q %%a
+)
+set DELETELIST=Z:\Install\Windows\System32\calc.exe Z:\Install\Windows\SysWOW64\calc.exe Z:\Install\Windows\WinSxS\Manifests\amd64_microsoft-windows-calc_31bf3856ad364e35_10.0.22621.1_none_0b53ccef0e7a283c.manifest Z:\Install\Windows\WinSxS\Manifests\wow64_microsoft-windows-calc_31bf3856ad364e35_10.0.22621.1_none_15a8774142daea37.manifest
+for %%a in (%DELETELIST%) do (
+	takeown /f %%a
+	icacls %%a /grant "%username%":f /c /l /q
+	del /f /q %%a
+)
 move Z:\calc.exe Z:\Install\Windows\System32
-%windir%\System32\WindowsPowerShell\v1.0\Powershell.exe -executionpolicy remotesigned -Command "& Get-Acl -Path Z:\Install\Windows\System32\control.exe | Set-Acl -Path %DEL%"
+%windir%\System32\WindowsPowerShell\v1.0\Powershell.exe -executionpolicy remotesigned -Command "& Get-Acl -Path Z:\Install\Windows\System32\control.exe | Set-Acl -Path Z:\Install\Windows\System32\calc.exe"
+move Z:\calc_64.exe Z:\Install\Windows\SysWOW64\calc.exe
+%windir%\System32\WindowsPowerShell\v1.0\Powershell.exe -executionpolicy remotesigned -Command "& Get-Acl -Path Z:\Install\Windows\System32\control.exe | Set-Acl -Path Z:\Install\Windows\SysWOW64\calc.exe"
 if exist Z:\Install\Windows\en-US\explorer.exe.mui (
 	del /f /q Z:\EN.txt
 	del /f /q Z:\calc.exe.cn.mui
@@ -149,28 +158,6 @@ if exist Z:\Install\Windows\ru-RU\explorer.exe.mui (
 	Z:\PostClear\AdvancedRun.exe /EXEFilename %windir%\System32\cmd.exe /CommandLine "/C copy Z:\calc.exe.ru.mui Z:\Install\Windows\System32\ru-RU\calc.exe.mui" /RunAs 8 /WaitProcess 1 /Run
 	move Z:\calc.exe.ru.mui Z:\Install\Windows\SysWOW64\ru-RU
 )
-set DEL=Z:\Install\Windows\WinSxS\amd64_microsoft-windows-calc_31bf3856ad364e35_10.0.22621.1_none_0b53ccef0e7a283c
-takeown /f %DEL%
-icacls %DEL% /grant "%username%":f /c /l /q
-rd /s /q %DEL%
-set DEL=Z:\Install\Windows\WinSxS\wow64_microsoft-windows-calc_31bf3856ad364e35_10.0.22621.1_none_15a8774142daea37
-takeown /f %DEL%
-icacls %DEL% /grant "%username%":f /c /l /q
-rd /s /q %DEL%
-set DEL=Z:\Install\Windows\WinSxS\Manifests\amd64_microsoft-windows-calc_31bf3856ad364e35_10.0.22621.1_none_0b53ccef0e7a283c.manifest
-takeown /f %DEL%
-icacls %DEL% /grant "%username%":f /c /l /q
-del /f /q %DEL%
-set DEL=Z:\Install\Windows\WinSxS\Manifests\wow64_microsoft-windows-calc_31bf3856ad364e35_10.0.22621.1_none_15a8774142daea37.manifest
-takeown /f %DEL%
-icacls %DEL% /grant "%username%":f /c /l /q
-del /f /q %DEL%
-set DEL=Z:\Install\Windows\SysWOW64\calc.exe
-takeown /f %DEL%
-icacls %DEL% /grant "%username%":f /c /l /q
-del /f /q %DEL%
-move Z:\calc_64.exe Z:\Install\Windows\SysWOW64\calc.exe
-%windir%\System32\WindowsPowerShell\v1.0\Powershell.exe -executionpolicy remotesigned -Command "& Get-Acl -Path Z:\Install\Windows\System32\control.exe | Set-Acl -Path %DEL%"
 title GameDVR
 set DEL="Z:\Install\Windows\bcastdvr\KnownGameList.bin"
 takeown /f %DEL%
@@ -201,7 +188,7 @@ start /w Z:\WimOptimize.exe Z:\Install\Windows\System32\Recovery\Winre.wim
 TIMEOUT /T 1 /NOBREAK >nul
 title Copy PostClear
 if not exist Z:\Install\Windows\ru-RU\explorer.exe.mui (
-	del /f /q Z:\PostClear\SLMP-11.chm
+	del /f /q Z:\PostClear\Help.chm
 )
 move Z:\PostClear Z:\Install\ProgramData\PostClear
 title Unmounting
@@ -209,7 +196,7 @@ dism /unmount-wim /mountdir:Z:\Install /commit
 title Done...
 del /f /q Z:\Clear.ps1
 del /f /q Z:\Clear.reg
-del /f /q Z:\DISM.11.Scripts.zip
 del /f /q Z:\SubinAcl.exe
 del /f /q Z:\WimOptimize.exe
+del /f /q Z:\Windows-10-DISM-Scripts.zip
 del /f /q Z:\_Clear.bat
