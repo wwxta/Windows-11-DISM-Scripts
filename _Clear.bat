@@ -198,5 +198,5 @@ del /f /q Z:\Clear.ps1
 del /f /q Z:\Clear.reg
 del /f /q Z:\SubinAcl.exe
 del /f /q Z:\WimOptimize.exe
-del /f /q Z:\Windows-10-DISM-Scripts.zip
+del /f /q Z:\Windows-11-DISM-Scripts.zip
 del /f /q Z:\_Clear.bat

@@ -100,6 +100,25 @@ Windows Registry Editor Version 5.00
 ; Центр обновления Windows
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\wuauserv]
 "Start"=dword:00000004
+; Device Guard
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\DeviceGuard]
+"CachedDrtmAuthIndex"=dword:00000000
+"RequireMicrosoftSignedBootChain"=dword:00000001
+"EnableVirtualizationBasedSecurity"=dword:00000000
+"RequirePlatformSecurityFeatures"=dword:00000000
+"Locked"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\DeviceGuard\Scenarios\CredentialGuard]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity]
+"Enabled"=dword:00000000
+"HVCIMATRequired"=dword:00000000
+"Locked"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\DeviceGuard\Scenarios\KernelShadowStacks]
+"Enabled"=dword:00000000
+"AuditModeEnabled"=dword:00000000
+"WasEnabledBy"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Lsa]
+"LsaCfgFlags"=dword:00000000
 ; Отключение Swapfile
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
 "SwapfileControl"=dword:00000000
@@ -146,6 +165,7 @@ Windows Registry Editor Version 5.00
 ; Размер для кеша иконок (8 МБ)
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
 "Max Cached Icons"="8192"
+; Дополнительные библиотеки контекстного меню
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
 ; EPP (Defender)
 "{09A47860-11B0-4DA5-AFA5-26D86198A780}"=""
@@ -167,6 +187,8 @@ Windows Registry Editor Version 5.00
 ; Аппаратное ускорение Edge
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
 "HardwareAccelerationModeEnabled"=dword:00000000
+; Автозапуск терминала
+[-HKEY_CLASSES_ROOT\PackagedCom\Package\Microsoft.WindowsTerminal_1.12.10983.0_x64__8wekyb3d8bbwe\Server]
 ; Контекстное меню. Закрепить на панели задач
 [-HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\{90AA3A4E-1CBA-4233-B8BB-535773D48449}]
 [-HKEY_CLASSES_ROOT\Application.Reference\shellex\ContextMenuHandlers\{90AA3A4E-1CBA-4233-B8BB-535773D48449}]
