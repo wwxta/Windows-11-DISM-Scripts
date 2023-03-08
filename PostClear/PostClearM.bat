@@ -89,12 +89,6 @@ schtasks /delete /tn "Microsoft\Windows\WindowsUpdate\Scheduled Start" /f
 if exist %windir%\en-US\explorer.exe.mui (
 	schtasks /create /tn "Microsoft\Windows\WindowsUpdate\Scheduled Start" /tr %windir%\explorer.exe /sc once /sd 11/30/1999 /st 00:00 /ru SYSTEM
 )
-if exist %windir%\zh-CN\explorer.exe.mui (
-	schtasks /create /tn "Microsoft\Windows\WindowsUpdate\Scheduled Start" /tr %windir%\explorer.exe /sc once /sd 1999/11/30 /st 00:00 /ru SYSTEM
-)
-if exist %windir%\ru-RU\explorer.exe.mui (
-	schtasks /create /tn "Microsoft\Windows\WindowsUpdate\Scheduled Start" /tr %windir%\explorer.exe /sc once /sd 30/11/1999 /st 00:00 /ru SYSTEM
-)
 schtasks /change /tn "Microsoft\Windows\WindowsUpdate\Scheduled Start" /disable
 %windir%\System32\WindowsPowerShell\v1.0\Powershell.exe -executionpolicy remotesigned -Command "& Get-Acl -Path %windir%\System32\control.exe | Set-Acl -Path '%windir%\System32\Tasks\Microsoft\Windows\WindowsUpdate\Scheduled Start'"
 %programdata%\PostClear\AdvancedRun.exe /EXEFilename %windir%\System32\schtasks.exe /CommandLine "/delete /tn Microsoft\Windows\Security\Pwdless\IntelligentPwdlessTask /f" /RunAs 4 /WaitProcess 1 /Run
@@ -111,7 +105,7 @@ schtasks /change /tn "Microsoft\Windows\WindowsUpdate\Scheduled Start" /disable
 %programdata%\PostClear\AdvancedRun.exe /EXEFilename %windir%\System32\schtasks.exe /CommandLine '/delete /tn "Microsoft\Windows\UpdateOrchestrator\UUS Failover Task" /f' /RunAs 4 /WaitProcess 1 /Run
 TIMEOUT /T 1 /NOBREAK >nul
 title Applying GroupPolicy
-%programdata%\PostClear\LGPO.exe /m %programdata%\PostClear\GPM.pol
+%programdata%\PostClear\LGPO.exe /m %programdata%\PostClear\GPm.pol
 TIMEOUT /T 1 /NOBREAK >nul
 title Updating GroupPolicy
 gpupdate /force
@@ -136,17 +130,6 @@ powercfg /change monitor-timeout-dc 5
 powercfg /change standby-timeout-ac 0
 powercfg /change standby-timeout-dc 0
 title Shortcuts
-if exist %windir%\ru-RU\explorer.exe.mui (
-	set oldnote=Блокнот
-	set oldcalc=Калькулятор
-) else (
-	set oldnote=Notepad
-	set oldcalc=Calculator
-)
-cscript %programdata%\PostClear\Shortcut.vbs "%programdata%\Microsoft\Windows\Start Menu\Programs\System Tools\WinTool.lnk" "%programdata%\PostClear\WinTool.exe"
-cscript %programdata%\PostClear\Shortcut.vbs "%programdata%\Microsoft\Windows\Start Menu\Programs\Accessories\%oldnote%.lnk" "%windir%\system32\notepad.exe"
-cscript %programdata%\PostClear\Shortcut.vbs "%programdata%\Microsoft\Windows\Start Menu\Programs\Accessories\%oldcalc%.lnk" "%windir%\System32\calc.exe"
-cscript %programdata%\PostClear\Shortcut.vbs "%programdata%\Microsoft\Windows\Start Menu\Programs\Microsoft Edge.lnk" "%programfiles(x86)%\Microsoft\Edge\Application\msedge.exe"
 del /f /q "%userprofile%\Desktop\Microsoft Edge.lnk"
 title Applying PostClearM.reg
 %programdata%\PostClear\AdvancedRun.exe /EXEFilename %windir%\System32\reg.exe /CommandLine "import %programdata%\PostClear\PostClearM.reg" /RunAs 4 /WaitProcess 1 /Run
@@ -165,4 +148,3 @@ del /f /q %programdata%\PostClear\CmdByteReplacer.exe
 del /f /q %programdata%\PostClear\GPM.pol
 del /f /q %programdata%\PostClear\LGPO.exe
 del /f /q %programdata%\PostClear\PostClearM.reg
-del /f /q %programdata%\PostClear\Shortcut.vbs
