@@ -4,6 +4,12 @@ Windows Registry Editor Version 5.00
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Update\TargetingInfo\DynamicInstalled\MSRT.amd64]
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Update\TargetingInfo\DynamicInstalled\SedimentPack.amd64]
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Update\TargetingInfo\DynamicInstalled\UUS.amd64]
+; Служба управления радио
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\RmSvc]
+"Start"=dword:00000004
+; Функциональные возможности для подключенных пользователей и телеметрия
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\DiagTrack]
+"Start"=dword:00000004
 ; SysMain
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\SysMain]
 "Start"=dword:00000004
