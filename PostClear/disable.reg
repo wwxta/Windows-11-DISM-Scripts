@@ -52,26 +52,6 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthAvctpSvc]
 "Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dps]
-"Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\InstallService]
-"Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\lmhosts]
-"Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DeviceAssociationService]
-"Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NVDisplay.ContainerLocalSystem]
-"Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SSDPSRV]
-"Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Schedule]
-"Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PlugPlay]
-"Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthAvctpSvc]
-"Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dps]
-"Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\InstallService]
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\lmhosts]
@@ -85,8 +65,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LicenseManager]
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Steam Client Service]
-"Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DPS]
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventSystem]
 "Start"=dword:00000004
