@@ -1,8 +1,4 @@
 Windows Registry Editor Version 5.00
-
-
-
-
 ; POWERSHELL
 ; Allow scripts in CMD set-executionpolicy remotesigned
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell]
@@ -12,9 +8,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell]
 "Path"="C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe"
 "ExecutionPolicy"="RemoteSigned"
-
-
-
 
 ; EDGE
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
@@ -34,14 +27,11 @@ Windows Registry Editor Version 5.00
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\MicrosoftEdgeUpdateTaskMachineCore]
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\MicrosoftEdgeUpdateTaskMachineUA]
 
-
-
-
-; CHROME
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
-"StartupBoostEnabled"=dword:00000000
-"HardwareAccelerationModeEnabled"=dword:00000000
-"BackgroundModeEnabled"=dword:00000000
+; CHROME / BRAVE
+#[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
+#"StartupBoostEnabled"=dword:00000000
+#"HardwareAccelerationModeEnabled"=dword:00000000
+#"BackgroundModeEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GoogleChromeElevationService]
 "Start"=dword:00000004
@@ -52,24 +42,15 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\gupdatem]
 "Start"=dword:00000004
 
-
-
-
 ; DISCORD
 ; Disable discord startup
 [-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
 
-
-
-
 ; STORE
 ; Update apps automatically
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore]
 "AutoDownload"=dword:00000002
-
-
-
 
 ; TASKBAR
 ; Left taskbar alignment
@@ -202,9 +183,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "Start_TrackDocs"=dword:00000000 
 
-
-
-
 ; EXPLORER
 ; Open file explorer to this pc
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
@@ -229,8 +207,6 @@ Windows Registry Editor Version 5.00
 ; Restore the classic context menu
 [HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
 @=""
-
-
 
 
 ; PERSONALIZATION
@@ -272,8 +248,6 @@ Windows Registry Editor Version 5.00
 ; Disable fix scaling for apps
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "EnablePerProcessSystemDPI"=dword:00000000
-
-
 
 
 ; SOUND
@@ -345,8 +319,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\AppEvents\Schemes\Apps\sapisvr\PanelSound\.current]
 
 
-
-
 ; MOUSE
 ; Turn off enhance pointer precision
 [HKEY_CURRENT_USER\Control Panel\Mouse]
@@ -377,15 +349,11 @@ Windows Registry Editor Version 5.00
 @=""
 
 
-
-
 ; AUTORUNS
 
 ; Fix search ctfmon
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
 "ctfmon"="C:\\Windows\\System32\\ctfmon.exe"
-
-
 
 
 ; POWER SETTINGS
@@ -428,8 +396,6 @@ Windows Registry Editor Version 5.00
 ; Battery options optimize for video quality
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\VideoSettings]
 "VideoQualityOnBattery"=dword:00000001
-
-
 
 
 ; ADVANCED SYSTEM SETTINGS
@@ -493,8 +459,6 @@ Windows Registry Editor Version 5.00
 "fAllowToGetHelp"=dword:00000000
 
 
-
-
 ; GAMING
 ; Disable game bar
 [HKEY_CURRENT_USER\System\GameConfigStore]
@@ -548,7 +512,6 @@ Windows Registry Editor Version 5.00
 "MicrophoneCaptureEnabled"=dword:00000000
 "SystemAudioGain"=hex(b):10,27,00,00,00,00,00,00
 "MicrophoneGain"=hex(b):10,27,00,00,00,00,00,00
-
 
 
 
@@ -698,8 +661,6 @@ Windows Registry Editor Version 5.00
 "IsMSACloudSearchEnabled"=dword:00000000
 
 
-
-
 ; ACCESSIBILITY
 ; Disable notifications
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PushNotifications]
@@ -791,7 +752,6 @@ E0,F6,C5,D5,0E,CA,50,00,00
 
 
 
-
 ; EASE OF ACCESS
 ; Disable narrator
 [HKEY_CURRENT_USER\Software\Microsoft\Narrator\NoRoam]
@@ -841,8 +801,6 @@ E0,F6,C5,D5,0E,CA,50,00,00
 [HKEY_CURRENT_USER\Control Panel\Accessibility\SlateLaunch]
 "ATapp"=""
 "LaunchAT"=dword:00000000
-
-
 
 
 ; OTHER
