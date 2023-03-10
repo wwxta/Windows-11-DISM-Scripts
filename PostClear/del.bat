@@ -8,3 +8,5 @@ del /s /f /q C:\windows\temp\*.*
 rd /s /q C:\windows\temp 
 del /s /f /q %temp%\*.* 
 rd /s /q %temp% 
+
+rd /s /q "C:\Program Files\7-Zip\Lang"
