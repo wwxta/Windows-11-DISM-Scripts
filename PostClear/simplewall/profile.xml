@@ -9,7 +9,7 @@
 		<item path="C:\windows\system32\windowspowershell\v1.0\powershell.exe" timestamp="1674207421" is_silent="true"/>
 		<item path="C:\windows\immersivecontrolpanel\systemsettings.exe" timestamp="1674207421" is_silent="true"/>
 		<item path="C:\programdata\PostClear\processhacker\processhacker.exe" timestamp="1674207421" is_silent="true"/>
-		<item path="C:\programdata\PostClear\wget.exe" timestamp="1674207421" is_silent="true"/>
+		<item path="C:\programdata\PostClear\wget.exe" timestamp="1674207421" is_silent="true" is_enabled="true"/>
 		<item path="C:\programdata\PostClear\simplewall\simplewall.exe" timestamp="1674207421" is_silent="true"/>
 		<item path="C:\program files\videolan\vlc\vlc.exe" timestamp="1674207421" is_silent="true"/>
 		<item path="C:\program files\mozilla firefox\pingsender.exe" timestamp="1674207421" is_silent="true"/>
@@ -21,7 +21,7 @@
 		<item path="C:\users\admin\appdata\roaming\telegram desktop\telegram.exe" timestamp="1674207421" is_enabled="true"/>
 		<item path="C:\users\admin\appdata\roaming\spotify\spotify.exe" timestamp="1674207421" is_enabled="true"/>
 		<item path="C:\users\admin\appdata\local\faceit\update.exe" timestamp="1674207421" is_enabled="true"/>
-		<item path="C:\program files (x86)\steam\bin\cef\cef.win7x64\steamwebhelper.exe" timestamp="1674207421" is_silent="true" is_enabled="true"/>
+		<item path="C:\program files (x86)\steam\bin\cef\cef.win7x64\steamwebhelper.exe" timestamp="1674207421" is_silent="true"/>
 		<item path="C:\program Files (x86)\steam\steam.exe" timestamp="1674207421" is_enabled="true"/>
 		<item path="C:\program files (x86)\steam\steamapps\common\counter-strike global offensive\csgo.exe" timestamp="1674207421" is_enabled="true"/>
 		<item path="C:\program files\faceit ac\faceitservice.exe" timestamp="1674207421" is_enabled="true"/>
