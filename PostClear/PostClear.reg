@@ -2,22 +2,23 @@ Windows Registry Editor Version 5.00
 ;skip_sig_check
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global]
 "{41FCC608-8496-4DEF-B43E-7D9BD675A6FF}"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\nvlddmkm]
 "{41FCC608-8496-4DEF-B43E-7D9BD675A6FF}"=dword:00000001
-;
+;pv
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations]
+".cr2"="PhotoViewer.FileAssoc.Tiff"
+".jpg"="PhotoViewer.FileAssoc.Jpeg"
+".wdp"="PhotoViewer.FileAssoc.Wdp"
+".jfif"="PhotoViewer.FileAssoc.JFIF"
+".dib"="PhotoViewer.FileAssoc.Bitmap"
+".png"="PhotoViewer.FileAssoc.Png"
+".jxr"="PhotoViewer.FileAssoc.Wdp"
+".bmp"="PhotoViewer.FileAssoc.Bitmap"
+".jpe"="PhotoViewer.FileAssoc.Jpeg"
+".jpeg"="PhotoViewer.FileAssoc.Jpeg"
+".gif"="PhotoViewer.FileAssoc.Gif"
 ".tif"="PhotoViewer.FileAssoc.Tiff"
 ".tiff"="PhotoViewer.FileAssoc.Tiff"
-".bmp"="PhotoViewer.FileAssoc.Tiff"
-".dib"="PhotoViewer.FileAssoc.Tiff"
-".gif"="PhotoViewer.FileAssoc.Tiff"
-".jfif"="PhotoViewer.FileAssoc.Tiff"
-".jpe"="PhotoViewer.FileAssoc.Tiff"
-".jpeg"="PhotoViewer.FileAssoc.Tiff"
-".jpg"="PhotoViewer.FileAssoc.Tiff"
-".jxr"="PhotoViewer.FileAssoc.Tiff"
-".png"="PhotoViewer.FileAssoc.Tiff"
 ; Отключение автозапуска скрипта
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run]
 "OneDriveSetup"=-
